@@ -25,8 +25,6 @@ public class CircularShifterTest {
 		words.add("after");
 		shifter.setIgnoreWords(words);
 		Set<String> required = new HashSet<>();
-		required.add("day");
-		required.add("tomorrow");
 		shifter.setRequiredWords(required);
 		inputLineStorage.addObserver(shifter);
 	}
@@ -34,10 +32,9 @@ public class CircularShifterTest {
 	@Test
 	public void test() {
 		inputLineStorage.addLine("The Day after Tomorrow");
-		assertEquals(2, afterShiftLineStorage.size());
+		assertEquals(0, afterShiftLineStorage.size());
 
-		assertEquals("Day after Tomorrow the", afterShiftLineStorage.get(0).toString());
-		assertEquals("Tomorrow the Day after", afterShiftLineStorage.get(1).toString());
+
 	}
 
 }
