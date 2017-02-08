@@ -24,6 +24,10 @@ public class CircularShifterTest {
 		words.add("the");
 		words.add("after");
 		shifter.setIgnoreWords(words);
+		Set<String> required = new HashSet<>();
+		required.add("day");
+		required.add("tomorrow");
+		shifter.setRequiredWords(required);
 		inputLineStorage.addObserver(shifter);
 	}
 
